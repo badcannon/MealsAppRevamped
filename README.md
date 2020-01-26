@@ -1,16 +1,14 @@
-# section7_app
-
-A new Flutter project.
+# Meals App 
+A Basic Meals App With Categories and Recipes to go with them :)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+You can Run this project with the following steps : 
 
-A few resources to get you started if this is your first Flutter project:
+Required Dependencies : 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Dart Sdk 
+Flutter Sdk (1.12) 
+Ide (Like android Studio)
+Android or Ios Emulator 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
