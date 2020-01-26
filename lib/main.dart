@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: "Delsi Meals",
       theme: ThemeData(
           primarySwatch: Colors.purple,
-          accentColor: Colors.pinkAccent,
-          canvasColor: Color.fromRGBO(255, 255, 255, 1),
+          accentColor: Colors.blue,
+          canvasColor: Colors.pink.shade100,
           appBarTheme: AppBarTheme().copyWith(
               textTheme: TextTheme(
                   title: TextStyle(
