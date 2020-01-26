@@ -12,3 +12,6 @@ Flutter Sdk (1.12)
 Ide (Like android Studio)
 Android or Ios Emulator 
 
+Steps to run : 
+Please refer to this docs page from flutter.dev :
+https://flutter.dev/docs/get-started/test-drive
