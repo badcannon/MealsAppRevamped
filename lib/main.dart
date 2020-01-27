@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/meal_details_screen.dart';
 import './screens/category_screen.dart';
 import './screens/category_page_screen.dart';
 
@@ -37,10 +38,15 @@ class MyApp extends StatelessWidget {
                   fontSize: 20))),
 
       //  route screen!
-      home: CategoryScreen(),
       routes: {
-        '/category-meals-screen': (ctx) => CategoryPageScreen(),
+        '/': (ctx) => CategoryScreen(),
+        CategoryPageScreen.routeName: (ctx) => CategoryPageScreen(),
+        MealDetails.routeName: (ctx) => MealDetails(),
       },
+      // When a route is not present in the route table
+      onGenerateRoute: (settings) {},
+      // When no route is present in the route table !
+      onUnknownRoute: (settings) {},
     );
   }
 }

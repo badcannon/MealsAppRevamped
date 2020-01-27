@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:section7_app/models/meal.dart';
 import 'dart:io';
+import '../screens/meal_details_screen.dart';
 
-class MealsItem extends StatelessWidget {
-  void showRecipe() {}
-
+class MealsItem extends StatelessWidget
+ {
+ 
+  final String id;
   final String title;
   final double duration;
   final String imageUrl;
@@ -12,12 +14,17 @@ class MealsItem extends StatelessWidget {
   final Affordability affordability;
 
   MealsItem(
-      {this.title,
+      {
+      this.id,
+      this.title,
       this.imageUrl,
       this.duration,
       this.affordability,
       this.complexity});
 
+  void showRecipe(BuildContext context) {
+    Navigator.of(context).pushNamed(MealDetails.routeName,arguments:id);
+  }
   String get _getComplexity {
     switch (complexity) {
       case Complexity.Simple:
@@ -55,7 +62,7 @@ class MealsItem extends StatelessWidget {
     final MediaQueryData mediaQuery = MediaQuery.of(context);
     return InkWell(
       onTap: () {
-        showRecipe();
+        showRecipe(context);
       },
       child: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -98,8 +105,7 @@ class MealsItem extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-               
+              ), 
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: new Row(
