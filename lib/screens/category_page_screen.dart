@@ -4,10 +4,9 @@ import '../data/dummy_data.dart';
 import '../models/meal.dart';
 
 class CategoryPageScreen extends StatefulWidget {
-  // final int id;
-  // final String title;
+  final List<Meal> availableMeals;
 
-  // CategoryPageScreen(this.id,this.title);
+  CategoryPageScreen(this.availableMeals);
   static const String routeName = '/category-meals-screen';
 
   @override
@@ -32,8 +31,8 @@ class _CategoryPageScreenState extends State<CategoryPageScreen> {
       final routeArgs =
           ModalRoute.of(context).settings.arguments as Map<String, String>;
       final catId = routeArgs['id'];
-       catTitle = routeArgs['title'];
-      Meals = DUMMY_MEALS.where((M) {
+      catTitle = routeArgs['title'];
+      Meals = widget.availableMeals.where((M) {
         return M.categories.contains(catId);
       }).toList();
       _initalLoad = true;
@@ -47,22 +46,26 @@ class _CategoryPageScreenState extends State<CategoryPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('${catTitle}'),
-        ),
-        body: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return MealsItem(
-              id: Meals[index].id,
-              affordability: Meals[index].affordability,
-              complexity: Meals[index].complexity,
-              duration: Meals[index].duration,
-              imageUrl: Meals[index].imageUrl,
-              title: Meals[index].title,
-              removeMeal : _removeMeals,
-            );
-          },
-          itemCount: Meals.length,
-        ));
+      appBar: AppBar(
+        title: Text('${catTitle}'),
+      ),
+      body: Meals.length > 0
+          ? ListView.builder(
+              itemBuilder: (ctx, index) {
+                return MealsItem(
+                  id: Meals[index].id,
+                  affordability: Meals[index].affordability,
+                  complexity: Meals[index].complexity,
+                  duration: Meals[index].duration,
+                  imageUrl: Meals[index].imageUrl,
+                  title: Meals[index].title,
+                );
+              },
+              itemCount: Meals.length,
+            )
+          : Center(
+              child: Text("No Items to Show :("),
+            ),
+    );
   }
 }

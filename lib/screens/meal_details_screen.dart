@@ -5,6 +5,11 @@ import '../data/dummy_data.dart';
 class MealDetails extends StatelessWidget {
   static const String routeName = "/meal-details";
 
+  final Function favToggle;
+  final Function stared;
+
+  MealDetails(this.favToggle,this.stared); 
+
   buildTheList(BuildContext ctx, List<String> list, int length) {
     return Container(
       decoration: BoxDecoration(
@@ -40,7 +45,6 @@ class MealDetails extends StatelessWidget {
       ModalRoute.of(context).settings.arguments  as Map<String,Object> ;
     var Id = routeArgs['id'];
     final Meal selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == Id);
-    final Function removeMeal =routeArgs['remove'];
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -126,10 +130,17 @@ class MealDetails extends StatelessWidget {
           ],
         ),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.delete_outline),
+      //   onPressed: (){
+      //     Navigator.of(context).pop(removeMeal(selectedMeal.id));
+      //   },
+      // ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.delete_outline),
+        child: stared(selectedMeal.id) ? Icon(Icons.star) : Icon(Icons.star_border),
         onPressed: (){
-          Navigator.of(context).pop(removeMeal(selectedMeal.id));
+          favToggle(selectedMeal.id);
+                    
         },
       ),
     );

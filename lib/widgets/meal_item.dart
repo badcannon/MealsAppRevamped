@@ -10,7 +10,6 @@ class MealsItem extends StatelessWidget {
   final String imageUrl;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeMeal;
 
   MealsItem({
     this.id,
@@ -19,13 +18,11 @@ class MealsItem extends StatelessWidget {
     this.duration,
     this.affordability,
     this.complexity,
-    this.removeMeal,
   });
 
   void showRecipe(BuildContext context) {
     Navigator.of(context).pushNamed(MealDetails.routeName, arguments: {
       'id': id,
-      'remove': removeMeal,
     }).then((result) {
       print(result);
     });
@@ -123,7 +120,7 @@ class MealsItem extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(duration.toString()),
+                        Text("${duration.toString()}m"),
                       ],
                     ),
                     new Row(
