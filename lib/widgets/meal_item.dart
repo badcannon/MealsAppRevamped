@@ -3,28 +3,34 @@ import 'package:section7_app/models/meal.dart';
 import 'dart:io';
 import '../screens/meal_details_screen.dart';
 
-class MealsItem extends StatelessWidget
- {
- 
+class MealsItem extends StatelessWidget {
   final String id;
   final String title;
   final double duration;
   final String imageUrl;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeMeal;
 
-  MealsItem(
-      {
-      this.id,
-      this.title,
-      this.imageUrl,
-      this.duration,
-      this.affordability,
-      this.complexity});
+  MealsItem({
+    this.id,
+    this.title,
+    this.imageUrl,
+    this.duration,
+    this.affordability,
+    this.complexity,
+    this.removeMeal,
+  });
 
   void showRecipe(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetails.routeName,arguments:id);
+    Navigator.of(context).pushNamed(MealDetails.routeName, arguments: {
+      'id': id,
+      'remove': removeMeal,
+    }).then((result) {
+      print(result);
+    });
   }
+
   String get _getComplexity {
     switch (complexity) {
       case Complexity.Simple:
@@ -105,7 +111,7 @@ class MealsItem extends StatelessWidget
                     ),
                   ),
                 ],
-              ), 
+              ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: new Row(

@@ -36,8 +36,11 @@ class MealDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var Id = ModalRoute.of(context).settings.arguments;
+     var routeArgs =
+      ModalRoute.of(context).settings.arguments  as Map<String,Object> ;
+    var Id = routeArgs['id'];
     final Meal selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == Id);
+    final Function removeMeal =routeArgs['remove'];
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -122,6 +125,12 @@ class MealDetails extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete_outline),
+        onPressed: (){
+          Navigator.of(context).pop(removeMeal(selectedMeal.id));
+        },
       ),
     );
   }

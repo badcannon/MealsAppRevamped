@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:section7_app/screens/filters_screen.dart';
+import './screens/tabs_screen.dart';
 import './screens/meal_details_screen.dart';
-import './screens/category_screen.dart';
 import './screens/category_page_screen.dart';
 
 void main() {
@@ -39,9 +40,10 @@ class MyApp extends StatelessWidget {
 
       //  route screen!
       routes: {
-        '/': (ctx) => CategoryScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryPageScreen.routeName: (ctx) => CategoryPageScreen(),
         MealDetails.routeName: (ctx) => MealDetails(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
       // When a route is not present in the route table
       onGenerateRoute: (settings) {},
