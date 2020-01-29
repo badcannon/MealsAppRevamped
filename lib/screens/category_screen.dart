@@ -10,7 +10,7 @@ class CategoryScreen extends StatelessWidget {
         padding: EdgeInsets.all(20),
         children: <Widget>[
             ...DUMMY_CATEGORIES.map((catData){
-              return CategoryItem(catData.title, catData.color,catData.id);
+              return CategoryItem(catData.title, catData.color,catData.id,catData.imageUrl);
             }).toList(),
           
         ],

@@ -70,9 +70,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: "Delsi Meals",
       theme: ThemeData(
-          primarySwatch: Colors.purple,
-          accentColor: Colors.blue,
-          canvasColor: Colors.pink.shade100,
+          primarySwatch: Colors.lightBlue,
+          accentColor: Colors.purple,
+          canvasColor: Colors.blue.shade100,
           appBarTheme: AppBarTheme().copyWith(
               textTheme: TextTheme(
                   title: TextStyle(

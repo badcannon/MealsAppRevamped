@@ -23,7 +23,6 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     super.initState();
-     
     _pages=[{
       'page': CategoryScreen(),
       'title': "Categories",
@@ -51,7 +50,7 @@ class _TabsScreenState extends State<TabsScreen> {
       drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Theme.of(context).canvasColor,
+        selectedItemColor: Theme.of(context).accentColor,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedPageIndex,
         backgroundColor: Theme.of(context).primaryColor,

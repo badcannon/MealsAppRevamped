@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../screens/filters_screen.dart';
 class MainDrawer extends StatelessWidget {
-  Widget _buildTile(String text, IconData icon,Function tapHandler ) {
+  Widget _buildTile(String text, IconData icon,Function tapHandler ,BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.all(5),
       leading: Icon(
         icon,
         size: 30,
-        color: Colors.pink,
+        color: Theme.of(context).accentColor,
       ),
       title: Text(
         text,
@@ -34,7 +34,7 @@ class MainDrawer extends StatelessWidget {
             ),
             height: mediaQuery.size.height * 0.2,
             width: mediaQuery.size.width,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).accentColor,
             alignment: Alignment.centerLeft,
           ),
           Padding(
@@ -43,10 +43,10 @@ class MainDrawer extends StatelessWidget {
               children: <Widget>[
                 _buildTile("Meals", Icons.restaurant,(){
                   Navigator.of(context).pushReplacementNamed("/");
-                }),
+                },context),
                 _buildTile("Filters", Icons.settings,(){
                   Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
-                }),
+                },context),
               ],
             ),
           ),

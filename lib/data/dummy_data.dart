@@ -5,51 +5,61 @@ import '../models/meal.dart';
 
 const DUMMY_CATEGORIES = const [
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1563791136187-40150b71f6f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     id: 'c1',
     title: 'Italian',
     color: Colors.purple,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c",
     id: 'c2',
     title: 'Quick & Easy',
     color: Colors.red,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1303&q=80",
     id: 'c3',
     title: 'Hamburgers',
     color: Colors.orange,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1571942676516-bcab84649e44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     id: 'c4',
     title: 'German',
     color: Colors.amber,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1451475836122-926a326bda4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
     id: 'c5',
     title: 'Light & Lovely',
     color: Colors.blue,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1556710808-b575a32f22a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80",
     id: 'c6',
     title: 'Exotic',
     color: Colors.blueGrey,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 'c7',
     title: 'Breakfast',
     color: Colors.lightBlue,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1540716189226-20cc9c9116e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
     id: 'c8',
     title: 'Asian',
     color: Colors.greenAccent,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80",
     id: 'c9',
     title: 'French',
     color: Colors.pink,
   ),
   Category(
+    imageUrl: "https://images.unsplash.com/photo-1527598041828-aea5d622f3a8",
     id: 'c10',
     title: 'Summer',
     color: Colors.teal,
