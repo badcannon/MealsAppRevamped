@@ -52,7 +52,7 @@ class CategoryItem extends StatelessWidget {
           ),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              gradient: LinearGradient(colors: [Colors.black.withOpacity(0.15), Colors.white38]),
+              // gradient: LinearGradient(colors: [Colors.black.withOpacity(0.15), Colors.white38]),
               border: Border.all(
                   width: 1,
                   style: BorderStyle.solid,

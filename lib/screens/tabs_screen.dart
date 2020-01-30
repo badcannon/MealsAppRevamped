@@ -3,12 +3,12 @@ import 'package:section7_app/widgets/main_drawer.dart';
 import './category_screen.dart';
 import './favorites_screen.dart';
 import '../models/meal.dart';
-class TabsScreen extends StatefulWidget {
+import '../screens/user_screen.dart';
 
+class TabsScreen extends StatefulWidget {
   final List<Meal> favList;
 
   TabsScreen(this.favList);
-
 
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -17,23 +17,26 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   List<Map<String, Object>> _pages;
 
-
   int _selectedPageIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _pages=[{
-      'page': CategoryScreen(),
-      'title': "Categories",
-    },
-    {
-      'page': FavoritesScreen(widget.favList),
-      'title': "Your Favorites",
-    }
-  ];
+    _pages = [
+      {
+        'page': CategoryScreen(),
+        'title': "Categories",
+      },
+      {
+        'page': FavoritesScreen(widget.favList),
+        'title': "Your Favorites",
+      },
+      {
+        'page': UserScreen(),
+        'title': "User Profile",
+      }
+    ];
   }
-
 
   void _selectPage(int index) {
     setState(() {
@@ -56,7 +59,6 @@ class _TabsScreenState extends State<TabsScreen> {
         backgroundColor: Theme.of(context).primaryColor,
         // Fixed is the default ! which will not require seperate background color !
         // type: BottomNavigationBarType.shifting,
-
         selectedFontSize: 18,
         onTap: _selectPage,
         items: [
@@ -66,10 +68,16 @@ class _TabsScreenState extends State<TabsScreen> {
             title: Text("Categories"),
           ),
           BottomNavigationBarItem(
-              // backgroundColor: Theme.of(context).primaryColor,
-              icon: Icon(Icons.star),
-              title: Text("Favorites"))
+            // backgroundColor: Theme.of(context).primaryColor,
+            icon: Icon(Icons.star),
+            title: Text("Favorites"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: Text("User"),
+          )
         ],
+        
       ),
       // initialIndex: 0,
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 import '../models/meal.dart';
-
+import '../models/user.dart';
 
 const DUMMY_CATEGORIES = const [
   Category(
@@ -415,4 +415,15 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: true,
   ),
+];
+
+
+const DUMMY_USER = const [
+   User(
+    emailId: "shreenidhihk@gmail.com",
+    firstName: "Shreenidhi Bharadawaj",
+    lastName: "HK",
+    imageUrl: "assets/images/Naruto.png",
+    username: "Badcannon"
+  )
 ];
